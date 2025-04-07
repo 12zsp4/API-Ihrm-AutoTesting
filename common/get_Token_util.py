@@ -42,17 +42,4 @@ class TokenFetcher(object):
             print(f"请求异常：{e}")
             return None
 
-#
-# # 示例用法
-# if __name__ == '__main__':
-#     # 输入用户名和密码
-#     mobile = "13800000002"  # 替换为你的用户名
-#     password = "hm#qd@23!"  # 替换为你的密码
-#
-#     # 获取 Token
-#     token = TokenFetcher.get_token(mobile, password)
-#
-#     if token:
-#         print(f"成功获取 Token: {token}")
-#     else:
-#         print("获取 Token 失败")
+

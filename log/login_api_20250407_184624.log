@@ -1,0 +1,18 @@
+2025-04-07 18:46:25,205 INFO [ihrm_login_api.py(login:13)] - 开始执行登录请求
+2025-04-07 18:46:25,205 DEBUG [ihrm_login_api.py(login:14)] - 请求地址: https://heimahr.itheima.net/api/sys/login
+2025-04-07 18:46:25,205 DEBUG [ihrm_login_api.py(login:15)] - 请求头: {'Content-Type': 'application/json'}
+2025-04-07 18:46:25,205 DEBUG [ihrm_login_api.py(login:16)] - 请求数据: {'mobile': '13800000002', 'password': 'hm#qd@23!'}
+2025-04-07 18:46:25,712 DEBUG [ihrm_login_api.py(login:20)] - 响应状态码: 200
+2025-04-07 18:46:25,713 DEBUG [ihrm_login_api.py(login:21)] - 响应内容: {"success":true,"code":10000,"data":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0NDAyMjc4NSwiZXhwIjoxNzQ0MDQ0Mzg1fQ.ZIC9NbR9TPZrgiFVwlGftpVhs15bvn5uezEgAz0ZoZo","message":"登录成功"}
+2025-04-07 18:46:25,718 INFO [ihrm_login_api.py(login:13)] - 开始执行登录请求
+2025-04-07 18:46:25,718 DEBUG [ihrm_login_api.py(login:14)] - 请求地址: https://heimahr.itheima.net/api/sys/login
+2025-04-07 18:46:25,718 DEBUG [ihrm_login_api.py(login:15)] - 请求头: {'Content-Type': 'application/json'}
+2025-04-07 18:46:25,718 DEBUG [ihrm_login_api.py(login:16)] - 请求数据: {'mobile': '', 'password': 'hm#qd@23!'}
+2025-04-07 18:46:26,212 DEBUG [ihrm_login_api.py(login:20)] - 响应状态码: 200
+2025-04-07 18:46:26,213 DEBUG [ihrm_login_api.py(login:21)] - 响应内容: {"success":false,"code":10000,"data":null,"message":"用户名或密码不能为空"}
+2025-04-07 18:46:26,216 INFO [ihrm_login_api.py(login:13)] - 开始执行登录请求
+2025-04-07 18:46:26,216 DEBUG [ihrm_login_api.py(login:14)] - 请求地址: https://heimahr.itheima.net/api/sys/login
+2025-04-07 18:46:26,216 DEBUG [ihrm_login_api.py(login:15)] - 请求头: {'Content-Type': 'application/json'}
+2025-04-07 18:46:26,216 DEBUG [ihrm_login_api.py(login:16)] - 请求数据: {'mobile': '13800000002', 'password': 'hmqd@23!'}
+2025-04-07 18:46:26,715 DEBUG [ihrm_login_api.py(login:20)] - 响应状态码: 200
+2025-04-07 18:46:26,715 DEBUG [ihrm_login_api.py(login:21)] - 响应内容: {"success":false,"code":10000,"data":null,"message":"用户名或密码错误"}

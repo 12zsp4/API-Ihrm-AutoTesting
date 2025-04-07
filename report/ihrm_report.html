@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>IHRM测试结果</title>
+    <meta name="generator" content="HTMLTestReport 0.0.1"/>
+    <link rel="stylesheet" href="http://unpkg.com/layui@2.6.8/dist/css/layui.css">
+    
+<style type="text/css">
+    .title { width: auto; height: 60px; text-align: center; font: bolder 38px/60px "Microsoft YaHei UI"; color: #009688; }
+    .summary span { font: normal 16px/38px "Microsoft YaHei UI"; margin-left: 20px; }
+    .success-btn { background-color: #28a745; }
+    .skip-btn { background-color: #84898c; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #5cb85c; }
+    .skipCase   { color: #84898c; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+    .layui-table tbody tr:hover, .layui-table-click, .layui-table-header, .layui-table-hover, .layui-table-mend, .layui-table-patch, .layui-table-tool, .layui-table[lay-even] tr:nth-child(even) {
+        background-color: transparent;
+    }
+</style>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level == 2 || level == 0) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level < 2) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+        }      
+    }
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        if (displayState == 'block' || displayState == '' ) {
+            details_div.style.display = 'none'
+        }
+        else {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+    }
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+    --></script>
+    <div class="layui-container">
+        
+    <!--报告标题-->
+    <div class="title">IHRM测试结果</div>
+    
+    <!--汇总信息-->
+    <fieldset class="layui-elem-field summary">
+        <legend>测试结果汇总</legend>
+        <div class="layui-field-box">
+            <table class="layui-table">
+                <colgroup>
+                    <col width="50%">
+                    <col width="50%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td>
+                            <button type="button" class="layui-btn">开始时间</button>
+                            <span class="text-dark">2025-04-07 18:46:25</span>
+                        </td>
+                        <td>
+                            <button type="button" class="layui-btn">执行时间</button>
+                            <span class="text-dark">0:00:04.021118 s</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="button" class="layui-btn">用例总数</button>
+                            <span class="text-dark">8</span>
+                        </td>
+                        <td>
+                            <button type="button" class="layui-btn">通过率</button>
+                            <span class="text-dark">75.00%</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="button" class="layui-btn">描述信息</button>
+                            <span class="text-dark">IHRM系统自动化测试报告</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button type="button" class="layui-btn success-btn">成功用例：6</button>
+                            <button type="button" class="layui-btn layui-btn-warm">失败用例：0</button>
+                            <button type="button" class="layui-btn layui-btn-danger">错误用例：2</button>
+                            <button type="button" class="layui-btn skip-btn">跳过用例：0</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+    
+    <!--图表展示-->
+    <fieldset class="layui-elem-field summary">
+        <legend>图表展示</legend>
+        <div class="layui-field-box">
+            <div class="char">
+                <div id="chart1" style="width: 49%;height: 400px;float: left"></div>
+                <div id="chart2" style="width: 49%;height: 400px;float: left"></div>
+            </div>
+        </div>
+    </fieldset>
+
+        
+    <fieldset class="layui-elem-field summary">
+        <legend>详细信息</legend>
+        <div class="layui-field-box">
+            <table id='result_table' class="layui-table">
+            <thead>
+                <tr id='header_row' style='background-color: #009688; color: #fff'>
+                    <th>测试用例</th>
+                    <th>总数</th>
+                    <th>通过</th>
+                    <th>失败</th>
+                    <th>错误</th>
+                    <th>跳过</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+				<tbody>
+                
+    <tr class='passClass'>
+        <td class="text-center">SelfStudy.FrameWork.apiAutoFramworkIhrm.scripts.test_ihrm_login.TestIhrmLogin</td>
+        <td class="text-center">3</td>
+        <td class="text-center">3</td>
+        <td class="text-center">0</td>
+        <td class="text-center">0</td>
+        <td class="text-center">0</td>
+        <td class="text-center"><button type="button" class="layui-btn layui-btn-xs" onclick="showClassDetail('c1',3)">详细</button></td>
+    </tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_0_login_success: 登录测试方法，使用从 JSON 文件加载的测试数据 [with name='login_success', json_data={'mobile': '13800000002', 'password': 'hm#qd@23!'}, expected_status=200, expected_success=True, expected_code=10000, expected_message='登录成功']</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.1')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.1' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.1: Test login_success response:  {'success': True, 'code': 10000, 'data': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0NDAyMjc4NSwiZXhwIjoxNzQ0MDQ0Mzg1fQ.ZIC9NbR9TPZrgiFVwlGftpVhs15bvn5uezEgAz0ZoZo', 'message': '登录成功'}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_1_login_mobile_none: 登录测试方法，使用从 JSON 文件加载的测试数据 [with name='login_mobile_none', json_data={'mobile': '', 'password': 'hm#qd@23!'}, expected_status=200, expected_success=False, expected_code=10000, expected_message='用户名或密码不能为空']</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.2')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.2' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.2: Test login_mobile_none response:  {'success': False, 'code': 10000, 'data': None, 'message': '用户名或密码不能为空'}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_2_login_password_false: 登录测试方法，使用从 JSON 文件加载的测试数据 [with name='login_password_false', json_data={'mobile': '13800000002', 'password': 'hmqd@23!'}, expected_status=200, expected_success=False, expected_code=10000, expected_message='用户名或密码错误']</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.3')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.3' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.3: Test login_password_false response:  {'success': False, 'code': 10000, 'data': None, 'message': '用户名或密码错误'}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+    <tr class='errorClass'>
+        <td class="text-center">SelfStudy.FrameWork.apiAutoFramworkIhrm.scripts.test_ihrm_RolesCurd.TestIhrmRoles</td>
+        <td class="text-center">5</td>
+        <td class="text-center">3</td>
+        <td class="text-center">0</td>
+        <td class="text-center">2</td>
+        <td class="text-center">0</td>
+        <td class="text-center"><button type="button" class="layui-btn layui-btn-xs" onclick="showClassDetail('c2',5)">详细</button></td>
+    </tr>
+
+<tr id='ft2.1' class=''>
+    <td class='errorCase'><div class='testcase'>test01_add_roles_0</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_ft2.1')">
+        错误</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_ft2.1' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>ft2.1: {'success': False, 'code': 40001, 'data': None, 'message': '存在重复的角色名称'}
+Traceback (most recent call last):
+  File "D:\Python\pythonProject\.venv\Lib\site-packages\parameterized\parameterized.py", line 620, in standalone_func
+    return func(*(a + p.args), **p.kwargs, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python\pythonProject\SelfStudy\FrameWork\apiAutoFramworkIhrm\scripts\test_ihrm_RolesCurd.py", line 21, in test01_add_roles
+    TestIhrmRoles.role_id = resp.json().get("data", {}).get("id")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft2.2' class=''>
+    <td class='errorCase'><div class='testcase'>test01_add_roles_1</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_ft2.2')">
+        错误</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_ft2.2' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>ft2.2: {'success': False, 'code': 40001, 'data': None, 'message': '存在重复的角色名称'}
+Traceback (most recent call last):
+  File "D:\Python\pythonProject\.venv\Lib\site-packages\parameterized\parameterized.py", line 620, in standalone_func
+    return func(*(a + p.args), **p.kwargs, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python\pythonProject\SelfStudy\FrameWork\apiAutoFramworkIhrm\scripts\test_ihrm_RolesCurd.py", line 21, in test01_add_roles
+    TestIhrmRoles.role_id = resp.json().get("data", {}).get("id")
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test01_add_roles_2</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt2.3')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt2.3' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt2.3: {'success': True, 'code': 40001, 'data': {'id': 23, 'name': 'Viewer', 'description': '只读查看用户', 'state': 1}, 'message': '新增角色成功'}
+新增角色ID: 23
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test02_modify_roles</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt2.4')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt2.4' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt2.4: 修改后的角色信息: {'success': True, 'code': 10000, 'data': None, 'message': '更新角色详情成功'}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2.5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test03_delete_roles</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt2.5')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt2.5' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt2.5: 删除角色的响应: {'success': True, 'code': 10000, 'data': None, 'message': '删除角色成功'}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+                </tbody>
+                <tr id='total_row' class="text-center active">
+                    <td align="right">总计</td>
+                    <td>8</td>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+	</fieldset>
+
+        <a href="#">
+    <ul class="layui-fixbar"><li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;"></li></ul>
+    </a>
+    
+        
+    <script type="text/javascript">
+        // 初始化echarts实例
+        var myChart1 = echarts.init(document.getElementById('chart1'));
+        var myChart2 = echarts.init(document.getElementById('chart2'));
+        // 指定图表的配置项和数据
+        option1 = {
+            tooltip: {
+                formatter: '{a} <br/>{b} : {c}%'
+            },
+            toolbox: {
+                feature: {
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            series: [{
+                name: '测试结果',
+                type: 'gauge',
+                detail: {
+                    formatter: '75.00%'
+                },
+                data: [{
+                    value: '75.00',
+                    name: '用例通过率'
+                }],
+                axisLine: {
+                    lineStyle: {
+                        color: [
+                            [0.2, '#c20000'],
+                            [0.8, '#ddb518'],
+                            [1, '#00a10a']
+                        ]
+                    }
+                }
+            }]
+        };
+        option2 = {
+            color: ['#00a10a', '#ddb518', 'rgba(204,46,41,0.73)', '#85898c'],
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b}: {c} ({d}%)'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 10,
+                data: ['通过', '失败', '错误', '跳过']
+            },
+            series: [{
+                name: '测试结果',
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [{
+                        value: 6,
+                        name: '通过'
+                    },
+                    {
+                        value: 0,
+                        name: '失败'
+                    },
+                    {
+                        value: 2,
+                        name: '错误'
+                    },
+                    {
+                        value: 0,
+                        name: '跳过'
+                    }
+                ]
+            }]
+        };
+
+        myChart1.setOption(option1);
+        myChart2.setOption(option2);
+    </script>
+    
+    </div>
+</body>
+</html>

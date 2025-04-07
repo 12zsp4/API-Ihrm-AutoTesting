@@ -3,11 +3,12 @@ from parameterized import parameterized
 from SelfStudy.FrameWork.apiAutoFramworkIhrm.api.ihrm_RolesCurd_api import IhrmRolesApi
 from SelfStudy.FrameWork.apiAutoFramworkIhrm.common.assert_util import common_assert
 from SelfStudy.FrameWork.apiAutoFramworkIhrm.common.read_json_util import load_test_data
+from SelfStudy.FrameWork.apiAutoFramworkIhrm.config import BASE_DIR
 
 class TestIhrmRoles(unittest.TestCase):
     role_id = None  # 类变量，用于共享role_id
     # 添加角色
-    data_path=r'D:\Python\pythonProject\SelfStudy\FrameWork\apiAutoFramworkIhrm\data\addRoles_data.json'
+    data_path=BASE_DIR+'\data'+'\AddRoles_data.json'
     @parameterized.expand(load_test_data(data_path))
     def test01_add_roles(self,json_data,status_code,success,code,message):
         # 添加角色的请求数据
