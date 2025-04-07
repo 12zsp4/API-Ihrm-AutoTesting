@@ -1,0 +1,35 @@
+[
+  {
+    "json_data": {
+      "name": "Admin",
+      "description": "系统管理员2",
+      "state": 1
+    },
+    "status_code": 200,
+    "success": true,
+    "code": 40001,
+    "message": "新增角色成功"
+  },
+  {
+    "json_data": {
+      "name": "Editor",
+      "description": "内容编辑人员",
+      "state": 0
+    },
+    "status_code": 200,
+    "success": true,
+    "code": 40001,
+    "message": "新增角色成功"
+  },
+  {
+    "json_data": {
+      "name": "Viewer",
+      "description": "只读查看用户",
+      "state": 1
+    },
+    "status_code": 200,
+    "success": true,
+    "code": 40001,
+    "message": "新增角色成功"
+  }
+]
